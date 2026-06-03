@@ -527,6 +527,17 @@ hr.is-style-separator-dotted,
         padding-right: 5px !important; /* Creates a clean safety gap on the right wall */
         box-sizing: border-box !important;
     }
+/* Targets the image in the first block */
+    .wp-block-image img, 
+    .wp-block-cover__image-background {
+        object-fit: cover !important;
+        /* Adjust this percentage to shift the image center. 
+           Increase to move left, decrease to move right. */
+        object-position: 23% center !important; 
+    }
+.wp-block-cover:has(img[src*="cropped"]) {
+        min-height: 280px !important; /* Increases height so the image doesn't crop too thinly */
+    }
 }#about-section {
     scroll-margin-top: 150px;
 }
